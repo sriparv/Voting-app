@@ -18,14 +18,14 @@ spec:
         app: sample-voting-app
     spec:
       containers:
-        - name: postgres_db_container
-          image: postgres:16.1
-          ports:
-            - containerPort: 5432
-          env:
-            - name: POSTGRES_USER
-              value: "postgres"
-            - name: POSTGRES_PASSWORD
-              value: "postgres"
-            - name: POSTGRES_HOST_AUTH_METHOD
-              value: trust
+      - name: postgres-db-container
+        image: postgres
+        ports:
+          - containerPort: 5432
+      env:
+      - name: POSTGRES_USER
+        value: "postgres"
+      - name: POSTGRES_PASSWORD
+        value: "postgres"
+      - name: POSTGRES_HOST_AUTH_METHOD
+        value: trust
